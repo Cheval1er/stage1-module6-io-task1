@@ -29,12 +29,12 @@ public class FileReader {
                             profile.setPhone(Long.parseLong(value));
                             break;
                         default:
-                            System.out.println("Line does not match pattern.");
+                           new Profile();
                     }
                 }
             }
         } catch (Exception e) {
-            System.out.println(e);
+            e.printStackTrace();
         }
         return profile;
     }
