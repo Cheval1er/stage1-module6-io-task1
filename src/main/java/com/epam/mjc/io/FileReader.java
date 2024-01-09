@@ -31,7 +31,8 @@ public class FileReader {
                             case "Phone":
                                 profile.setPhone(Long.parseLong(value));
                                 break;
-
+                            default:
+                                System.err.println("Line does not match pattern.");
                         }
                     }
                 }
@@ -40,6 +41,8 @@ public class FileReader {
             }
         } catch (IOException e) {
             e.printStackTrace(); // Handle the exception according to your requirements
+        } catch (NumberFormatException e) {
+            System.err.println("Error parsing number: " + e.getMessage());
         }
         return profile;
     }
